@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - AgriBot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>
+            <img src="{{ url_for('static', filename='agribot_logo.png') }}" alt="AgriBot Logo" class="logo">
+            Create Account
+        </h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <form method="POST">
+            <div class="input-group">
+                <span class="input-icon">👤</span>
+                <input type="text" name="username" placeholder="Choose a username" required>
+            </div>
+            <div class="input-group">
+                <span class="input-icon">🔒</span>
+                <input type="password" name="password" placeholder="Choose a password" required>
+            </div>
+            <div class="form-constraints">
+                <p>Username must be at least 4 characters.</p>
+                <p>Password must be at least 6 characters.</p>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="{{ url_for('user_login') }}">Log in here</a></p>
+    </div>
+</body>
+</html>

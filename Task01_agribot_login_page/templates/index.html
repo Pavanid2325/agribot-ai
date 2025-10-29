@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - AgriBot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="home-header">
+            <h2>🌾 AgriBot Home</h2>
+            <span>Welcome, <strong>{{ session['username'] }}</strong>!</span>
+        </div>
+
+        <div class="welcome-text">
+            <p>You have successfully logged in.</p>
+            <p>Soon, this page will contain the interactive chatbot.</p>
+        </div>
+
+        <a href="{{ url_for('logout') }}" class="logout-link" style="display: block; text-align: center; margin-top: 30px;">Logout</a>
+    </div>
+</body>
+</html>
