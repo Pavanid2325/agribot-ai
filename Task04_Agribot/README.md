@@ -65,7 +65,7 @@ cd agribot-ai
 2. Navigate to the final project folder:
 Based on your project structure, the main file is inside a subfolder.
 
-cd Task04_Agribot/agribot
+cd Task04_Agribot/ai-agribot
 
 
 3. Create a virtual environment & activate it:
